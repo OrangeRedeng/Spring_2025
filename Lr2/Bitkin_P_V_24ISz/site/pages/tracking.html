@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <title>RusLog — Трекинг</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Начало шапки сайта -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__wrapper">
+                <!-- Логотип -->
+                <div class="header__logo">
+                    <a href="index.html" class="header__logo-link">
+                        <img src="../images/ruslog-logo.svg" alt="RusLog - Логистическая компания"
+                            class="header__logo-pic">
+                    </a>
+                </div>
+
+                <!-- Навигация -->
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a href="index.html" class="header__link">Главная</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="services.html" class="header__link">Услуги</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="tracking.html" class="header__link active">Трекинг</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="about.html" class="header__link">О компании</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="tel:+74957777777" class="header__number">+7 (495) 777-77-77</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main tracking">
+        <section class="tracking">
+            <div class="wrapper">
+                <h1 class="tracking-title">Отследить отправление</h1>
+
+                <!-- Форма трекинга -->
+                <form class="tracking-form" id="trackingForm">
+                    <input type="text" class="tracking-input" placeholder="Введите трек-номер (например, RL123456789RU)"
+                        pattern="RL\d{9}RU" required>
+                    <button type="submit" class="button">Найти</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="../scripts/inputmask.min.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+
+</html>

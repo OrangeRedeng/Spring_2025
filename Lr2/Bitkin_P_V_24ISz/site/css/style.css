@@ -1,0 +1,470 @@
+/* Подключение шрифтов Montserrat */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v29-cyrillic_latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v29-cyrillic_latin-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/montserrat-v29-cyrillic_latin-900.woff2') format('woff2');
+}
+
+/* Основные стили для страницы */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+
+}
+
+/* Стили для body */
+body {
+    margin: 16px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: white;
+    background: linear-gradient(180deg, #091b24 0%, #1b5570 100%) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.wrapper {
+    max-width: 1404px;
+    margin: 0 auto;
+}
+
+/* Стили шапки */
+.header {
+    background-color: transparent
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 56px;
+}
+
+/* Стили навигации */
+.header__list {
+    display: flex;
+}
+
+.header__item {
+    margin-right: 92px;
+}
+
+.header__item:last-child {
+    margin-right: 0;
+}
+
+.header__link {
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header__link:hover,
+.header__link:focus {
+    opacity: .8;
+}
+
+.header__link:active {
+    opacity: .6;
+}
+
+/* Стили для активной ссылки */
+.header__link.active {
+    font-weight: 700;
+}
+
+.header__link.active::after {
+    content: "";
+    display: block;
+    margin: 5px auto 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7b625;
+}
+
+.header__number {
+    color: white;
+    text-decoration: none;
+}
+
+.header__number::after {
+    content: "";
+    display: block;
+    margin: 5px auto 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent
+}
+
+.header__number:hover {
+    opacity: 0.8;
+}
+
+.header__number:active {
+    opacity: 0.6;
+}
+
+/* Стили оффера */
+
+.offer .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 125px 0;
+}
+
+.offer__title {
+    font-weight: 900;
+    font-size: 40px;
+    color: #c0c5b4;
+    max-width: 422px;
+    margin-bottom: 30px;
+}
+
+.offer__subtitle {
+    max-width: 370px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    font-family: 'Montserrat';
+    border-radius: 30px;
+    padding: 20px 40px;
+    box-shadow: 0 0 25px 0 rgba(247, 182, 37, 0.25);
+    background: linear-gradient(45deg, #f7b625 0%, #c4911d 100%);
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+.button:hover,
+.button:focus {
+    opacity: .8;
+}
+
+.button:active {
+    opacity: .6;
+    transform: translateY(2px);
+}
+
+.offer__art {
+    margin-top: 0px;
+}
+
+/* Стили страницы "Услуги" */
+.services {
+    color: #fff;
+    text-align: center;
+}
+
+.services__title {
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 0px;
+    margin: 0 auto;
+}
+
+.services__card {
+    padding: 32px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.services__card__icon {
+    width: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.services__card__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #e4bb54;
+}
+
+.services__card__description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.services__card:hover {
+    transform: scale(1.1);
+}
+
+/* Стили модального окна */
+.modal {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Стили контейнера модального окна */
+.modal-content {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0px);
+}
+
+/* Шапка модального окна */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: black;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Кнопка-крестик */
+.close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Основная часть (тело) модального окна */
+.modal-body {
+    padding: 15px;
+}
+
+/* Стили для формы */
+.modal-body label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: 400;
+    color: black;
+    font-size: 14px;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="tel"],
+.modal-body textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 14px;
+    font-family: 'Montserrat';
+}
+
+.modal-body textarea {
+    resize: vertical;
+}
+
+/* Подвал с кнопками */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.modal-footer button {
+    padding: 8px 12px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+#closeBtn {
+    background-color: #6c747e;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+
+#closeBtn:hover {
+    opacity: 0.8;
+}
+
+#closeBtn:active {
+    opacity: 0.6;
+}
+
+.modal-footer button[type="submit"] {
+    background-color: #007AFF;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.modal-footer button[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+.modal-footer button[type="submit"]:active {
+    opacity: 0.6;
+}
+
+/* Стили для страницы трекинга */
+.tracking {
+    text-align: center;
+}
+
+.tracking-title {
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.tracking-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+}
+
+.tracking-input {
+    flex: 1;
+    padding: 15px 25px;
+    border: 1px solid #f7b625;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 16px;
+}
+
+/* Стили страницы "О компании" */
+
+.about-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.about-block {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.about-block h2 {
+    color: #c0c5b4;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.advantage-card {
+    background: #091b24;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #1b5570;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+}
+
+.advantage-card h3 {
+    color: #f7b625;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.contacts-info {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contacts-info a {
+    color: #f7b625;
+    text-decoration: none;
+}
+
+.contacts-info a:hover {
+    text-decoration: underline;
+}

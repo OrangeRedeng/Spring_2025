@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <title>RusLog — Главная</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Начало шапки сайта -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__wrapper">
+                <!-- Логотип -->
+                <div class="header__logo">
+                    <a href="index.html" class="header__logo-link">
+                        <img src="../images/ruslog-logo.svg" alt="RusLog - Логистическая компания"
+                            class="header__logo-pic">
+                    </a>
+                </div>
+
+                <!-- Навигация -->
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a href="index.html" class="header__link active">Главная</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="services.html" class="header__link">Услуги</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="tracking.html" class="header__link">Трекинг</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="about.html" class="header__link">О компании</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="tel:+74957777777" class="header__number">+7 (495) 777-77-77</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <section class="offer">
+            <div class="wrapper">
+                <!-- Текст оффера -->
+                <div class="offer__content">
+                    <h1 class="offer__title">
+                        Ваш груз<br>в надежных руках
+                    </h1>
+                    <h2 class="offer__subtitle">
+                        Быстрая, безопасная и прозрачная логистика для вашего бизнеса
+                    </h2>
+                    <!-- Кнопка для открытия модального окна -->
+                    <a href="#" class="button" id="openModal">Заказать консультацию</a>
+                </div>
+
+                <!-- Иллюстрация оффера -->
+                <div class="offer__art">
+                    <img src="../images/main-art.png" alt="Доставка грузов по России" class="offer__art-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Модальное окно -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+
+                <!-- Шапка модального окна -->
+                <div class="modal-header">
+                    <h2>Заказать консультацию</h2>
+                    <span class="close">&times;</span>
+                </div>
+
+                <!-- Основная часть с формой -->
+                <div class="modal-body">
+                    <form id="contactForm">
+
+                        <label for="firstName">Имя</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Иван" required />
+
+                        <label for="lastName">Фамилия</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Иванов" required />
+
+                        <label for="tel">Номер телефона</label>
+                        <input type="tel" id="tel" name="tel" placeholder="+7 (___) ___-__-__" required />
+
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" name="comment" rows="3" placeholder="Ваш комментарий">
+                        </textarea>
+                    </form>
+                </div>
+
+                <!-- Подвал модального окна -->
+                <div class="modal-footer">
+                    <button id="closeBtn">Закрыть</button>
+                    <button form="contactForm" type="submit">Отправить</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- Подключение скриптов -->
+    <script src="../scripts/inputmask.min.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+
+</html>
